@@ -8,7 +8,7 @@ public class AddScore : MonoBehaviour
   {
     if(collision.gameObject.CompareTag("Player"))
     {
-        ScoreManager.Instance.UpdateScore();
+        //ScoreManager.Instance.UpdateScore();
     }
   }
 }
