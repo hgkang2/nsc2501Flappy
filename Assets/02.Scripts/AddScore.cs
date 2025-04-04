@@ -1,14 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AddScore : MonoBehaviour
 {
-  void OnTriggerEnter2D(Collider2D collision)
-  {
-    if(collision.gameObject.CompareTag("Player"))
+    [SerializeField] int scoreValue; // 파이프 종류별로 얻게 되는 점수 지정
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        //ScoreManager.Instance.UpdateScore();
+        // "Player"라는 태그로 들어온 트리거만 인식
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // scoreValue값을 실제 score에 업데이트
+            ScoreManager.Instance.UpdateScore(scoreValue);
+        }
     }
-  }
 }
